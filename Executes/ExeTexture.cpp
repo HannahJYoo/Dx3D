@@ -36,7 +36,6 @@ ExeTexture::ExeTexture(ExecuteValues * values)
 		HRESULT hr = D3D::GetDevice()->CreateBuffer(&desc, &data, &vertexBuffer);
 		assert(SUCCEEDED(hr));
 	}
-
 	//CreateIndexBuffer
 	{
 		D3D11_BUFFER_DESC desc = { 0 };
@@ -50,7 +49,6 @@ ExeTexture::ExeTexture(ExecuteValues * values)
 		HRESULT hr = D3D::GetDevice()->CreateBuffer(&desc, &data, &indexBuffer);
 		assert(SUCCEEDED(hr));
 	}
-
 	//Load SRV
 	{
 		HRESULT hr = D3DX11CreateShaderResourceViewFromFile(D3D::GetDevice(), (Textures + L"Box.png").c_str(), NULL, NULL, &srv, NULL);
